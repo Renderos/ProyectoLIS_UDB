@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function redirectToForm() {
+            var userType = document.querySelector('input[name="userType"]:checked').value;
+            
+            if (userType === 'cliente') {
+                window.location.href = 'register-client.php';
+            } else if (userType === 'empresa') {
+                window.location.href = 'register-business.php';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Registro</h1>
+        <p>Selecciona el tipo de cuenta que deseas registrar:</p>
+        <form>
+            <input type="radio" id="cliente" name="userType" value="cliente" checked>
+            <label for="cliente">Cliente</label><br>
+            <input type="radio" id="empresa" name="userType" value="empresa">
+            <label for="empresa">Empresa</label><br>
+            <button type="button" onclick="redirectToForm()">Continuar</button>
+        </form>
+    </div>
+</body>
+</html>
